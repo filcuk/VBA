@@ -13,9 +13,9 @@
 
 ### Division
 `3 / 2`
->1.5
+>1.5  
 `3 \ 2`
->1
+>1  
 
 ### UDF param tooltip
 - You can press `CTRL+SHIFT+A` to show all parameter vars
