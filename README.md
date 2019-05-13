@@ -12,10 +12,10 @@
 > Glad you asked. This returns selected range **even** if an object (such as graphic) is selected.
 
 ### Division
-`3 / 2`
->1.5  
-`3 \ 2`
->1  
+`3 / 2`  
+> 1.5  
+`3 \ 2`  
+> 1  
 
 ### UDF param tooltip
 - You can press `CTRL+SHIFT+A` to show all parameter vars
