@@ -1,5 +1,7 @@
 # Personal VBA KB
 
+*I'm still learning Markup, don't think about it too much.*
+
 ### Determine uninitialised array
 `If Not Not myArray Then Debug.Print UBound(myArray) Else Debug.Print "Not initialised"`  
 *This quirk requires double negative to work correctly.*
