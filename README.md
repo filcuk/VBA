@@ -1,3 +1,3 @@
 # Personal VBA KB
 
-See **Wiki**
+See [**Wiki**](https://github.com/filcuk/VBAKB/wiki)
