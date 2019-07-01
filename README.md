@@ -23,15 +23,16 @@
 - You can press `CTRL+SHIFT+A` to show all parameter vars
 - You can find and edit properties of your UDF in the VBA IDE object browser
 
-### Variable Types
+### Type Declaration Suffixes
+*Not recommended due to reduced code readability.*
 ```
-Dim iNumber%     'Integer  
-Dim lAverage&    'Long  
-Dim sngTotal!    'Single  
-Dim dbTotal#     'Double  
-Dim cProfit@     'Currency  
-Dim sFirstName$  'String  
-Dim llDiscount^  'LongLong on 64 bit
+Dim integer%  ' Integer  
+Dim long&     ' Long  
+Dim single!   ' Single  
+Dim double#   ' Double  
+Dim currency@ ' Currency  
+Dim string$   ' String  
+Dim longLong^ ' 64 bit
 ```
 
 ### .SpecialCells()
