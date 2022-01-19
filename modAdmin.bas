@@ -11,8 +11,8 @@ Dim Cols As Range
 Dim State As Boolean
     
     On Error Resume Next
-    Set Rows = ActiveSheet.Range("admCols")
-    Set Cols = ActiveSheet.Range("admRows")
+    Set Rows = ActiveSheet.Range("admRows")
+    Set Cols = ActiveSheet.Range("admCols")
     State = Not Rows.EntireRow.Hidden
     State = Not Cols.EntireColumn.Hidden
     On Error GoTo 0
