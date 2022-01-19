@@ -1,3 +1,3 @@
-# Personal VBA KB
+# VBA
 
-See [**Wiki**](https://github.com/filcuk/VBAKB/wiki)
+Repository for commonly reused or otherwise useful code.
