@@ -1,5 +1,6 @@
 # VBA
 
-Repository for commonly reused or otherwise useful code.
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/filcuk/VBA?label=commits)
+![GitHub last commit](https://img.shields.io/github/last-commit/filcuk/VBA)
 
-3rd-party code is credited within it's subfolder readme.
+Repository of useful modules.
