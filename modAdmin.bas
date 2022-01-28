@@ -1,32 +1,38 @@
 Attribute VB_Name = "modAdmin"
 Option Explicit
 
-' Admin
-' Function: Show/hide administrative ranges easily
-' Usage:    Use named ranges scoped to worksheet
-'
-Sub Admin()
-Dim Rows As Range
-Dim Cols As Range
-Dim State As Boolean
+Sub AdminSwitch()
+    Dim Col As Range
+    Dim Row As Range
+    Dim Act As Boolean
     
     On Error Resume Next
-    Set Rows = ActiveSheet.Range("admRows")
-    Set Cols = ActiveSheet.Range("admCols")
-    State = Not Rows.EntireRow.Hidden
-    State = Not Cols.EntireColumn.Hidden
-    On Error GoTo 0
+    Set Col = [AdmCol]
+    Set Row = [AdmRow]
+    On Error GoTo AdminSwitch_Err
     
-    If Rows Is Nothing And Cols Is Nothing Then GoTo Admin_Exit
+    If Col Is Nothing And Row Is Nothing Then
+        MsgBox "No admin setup on current sheet."
+        GoTo AdminSwitch_Exit
+    End If
     
-    On Error Resume Next
-    Application.ScreenUpdating = False
-    Cols.EntireColumn.Hidden = State
-    Rows.EntireRow.Hidden = State
-    On Error GoTo 0
+    If Not Col Is Nothing Then
+        Act = Not Col.EntireColumn.hidden
+        Col.EntireColumn.hidden = Act
+    End If
     
-Admin_Exit:
-    Application.ScreenUpdating = True
+    If Not Row Is Nothing Then
+        If Col Is Nothing Then
+            Act = Not Row.EntireRow.hidden
+        End If
+        
+        Row.EntireRow.hidden = Act
+    End If
+    
+AdminSwitch_Exit:
     Exit Sub
+    
+AdminSwitch_Err:
+    MsgBox "Unable to access admin."
+    Resume AdminSwitch_Exit
 End Sub
-
