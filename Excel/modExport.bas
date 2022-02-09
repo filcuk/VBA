@@ -1,11 +1,16 @@
 Attribute VB_Name = "modExportWks"
 Option Explicit
-Option Private Module
 
 ' Description:
 ' Copy worksheet to a new workbook and save it in a user-designated folder
 '
-Function ExportWorksheet(ByVal pSheetName As String, ByVal pExportName As String) As Boolean
+' Usage:
+Sub ExportSample()
+Dim Result As Boolean
+    Result = ExportWorksheet("Sample", "Sample " & Format(Now(), "yyyymmddhhMM"))
+End Sub
+'
+Private Function ExportWorksheet(ByVal pSheetName As String, ByVal pExportName As String) As Boolean
 Const cDiscardOnSaveCancel As Boolean = True    ' Discard if dialog cancelled by user
 Const cDiscardOnError As Boolean = True         ' Discard on critical error
 Dim Success As Boolean
@@ -34,7 +39,7 @@ Dim Dlg As Variant
     If Dlg <> False Then
         Wbk.SaveAs Dlg
         Success = True
-    ElseIf cDiscardOnFail Then
+    ElseIf cDiscardOnSaveCancel Then
         Wbk.Close SaveChanges:=False
         Success = False
     End If
@@ -43,7 +48,7 @@ Export_Exit:
     Application.ScreenUpdating = True
     Application.EnableEvents = True
     Application.DisplayAlerts = True
-    Export = Success
+    ExportWorksheet = Success
     Exit Function
 Export_Err:
     Success = False
