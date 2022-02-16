@@ -9,8 +9,8 @@ Dim Row As Range
 Dim Act As Boolean
     
     On Error Resume Next
-    Set Col = [AdmCol]
-    Set Row = [AdmRow]
+    Set Col = [admCol]  ' Modify as required
+    Set Row = [admRow]  ' Modify as required
     On Error GoTo AdminSwitch_Err
     
     If Col Is Nothing And Row Is Nothing Then
@@ -41,7 +41,7 @@ End Sub
 
 ' Switch between development and production
 Sub AdminWbkSwitch()
-Const Nam As String = "AdmSht"
+Const Nam As String = "admSht"  ' Modify as required
 Dim Act As Boolean
 Dim Ini As Boolean: Init = True
 Dim Wks As Worksheet
