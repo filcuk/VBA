@@ -14,17 +14,19 @@ Private CancelClose As Boolean
 
 Private Sub Workbook_Open()
     Call Landing(False)
-    Call WaitFrm(False, "Press [esc] to cancel data update.")
-    ThisWorkbook.Sheets("Trucks").ListObjects("tblTrucks").QueryTable.Refresh
+    Call WaitFrm(False, "Loading data...")
+    ThisWorkbook.Sheets("Data").ListObjects("tblData").QueryTable.Refresh   ' Set refresh target
     Call WaitFrm(True)
 End Sub
 
+' Requires [appAllowNextSave] name to point to a range
 Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean)
 Dim IsSaved  As Boolean
 
     Cancel = True
     If Not [appAllowNextSave] = True Then
-        Debug.Print "Save feature is disabled. Set [appAllowNextSave] = True to re-enable temporarily."
+        Debug.Print "Saveing is disabled. Confirm to re-enable temporarily:"
+        Debug.Print "[appAllowNextSave] = True"
     Else
         Application.EnableEvents = False
         [appAllowNextSave] = False
@@ -49,7 +51,7 @@ End Sub
 
 Private Sub Landing(pEnable As Boolean)
 Const cWksLanding As String = "Landing" ' Shown in place of hidden sheets
-Const cWksActivate As String = "Trucks" ' Sheet to land on once active content is enabled
+Const cWksActivate As String = "Data"   ' Sheet to land on once active content is enabled
 Const cWksAbout As String = "About"     ' Sheet to always remain visible
 Dim Wbk As Workbook
 Dim Wks As Worksheet
