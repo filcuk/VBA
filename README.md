@@ -16,7 +16,7 @@ Procedure header example:
 '           aren't valid.
 '           Does not verify whether upload was successful.
 ' Author    Filip Kraus, github.com/filcuk
-'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'==========================================================
 ' Log       2022-06-16  Initial
 '----------------------------------------------------------
 Function SaveToSharepoint( _
